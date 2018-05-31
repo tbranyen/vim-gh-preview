@@ -63,7 +63,7 @@ def start_browser(url):
          'open -g'  if sys.platform.startswith('darwin')\
     else 'start'    if sys.platform.startswith('win')\
     else 'xdg-open'
-    os.system(command + ' ' + url)
+    os.system(command + ' ' + url + ' ' + '> /dev/null 2>&1')
 
 
 def process_queue(stop_event, port, auto_open_browser, auto_start_server):
